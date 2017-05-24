@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="180px" viewBox="0 0 60 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait-Copy-10" transform="translate(-673.000000, -272.000000)" stroke="#9B9FA2" stroke-width="4">
+            <g id="Group-4" transform="translate(681.000000, 347.000000)" stroke-linecap="round">
+                <path d="M0,13.3518044 L17.3104247,30.5528864 C17.7004902,30.940488 18.3066596,30.9143483 18.6617067,30.4975952 L44.6437111,0" id="Path-32"></path>
+            </g>
+            <g id="Group-3" transform="translate(681.000000, 396.000000)">
+                <g id="Group-2">
+                    <path d="M40,8 L38.0464935,50.0003895 C38.0208159,50.5524591 37.5476379,51 37.0072136,51 L6.99278641,51 C6.44448561,51 5.9788923,50.5461844 5.95350649,50.0003895 L4,8" id="Rectangle-2"></path>
+                    <path d="M0,8 L12.0014977,8 C12.5529553,8 13,7.54696369 13,7.00296986 L13,3.00166547 C13,1.34389141 14.3529255,-1.29093048e-09 15.9925398,-2.85522073e-09 L28.0074602,-1.43181751e-08 C29.6601943,-1.58949825e-08 31,1.33902012 31,3.00166546 L31,7.00296986 C31,7.5536144 31.4474894,8 31.9985023,8 L44,8" id="Line" stroke-linecap="round"></path>
+                    <path d="M16,18 L16,40.5" id="Line" stroke-linecap="round"></path>
+                    <path d="M28,18 L28,40.5" id="Line-Copy" stroke-linecap="round"></path>
+                </g>
+            </g>
+            <g id="Group-5" transform="translate(679.000000, 278.000000)" stroke-linecap="round">
+                <g id="Group">
+                    <path d="M0,24 L48,24" id="Line"></path>
+                    <path d="M24,0 L24,48" id="Line"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

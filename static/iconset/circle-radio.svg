@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="96px" height="48px" viewBox="0 0 96 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="808" cy="1494" r="24"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="48" height="48" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait-Copy-6" transform="translate(-784.000000, -1470.000000)">
+            <use id="Oval-9" stroke="#E0E0E0" mask="url(#mask-2)" stroke-width="8" xlink:href="#path-1"></use>
+            <g id="Group-12" transform="translate(832.000000, 1470.000000)">
+                <circle id="Oval-10" fill="#008AFE" cx="24" cy="24" r="24"></circle>
+                <path d="M13,24 L20.2900533,31.2900534 C20.682146,31.6821461 21.3187138,31.6812861 21.7135092,31.2864907 L34.9999994,18" id="Path-29" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M63.6053468,4.60534702 C57.7481755,-1.25182441 48.2499607,-1.24996079 42.3940943,4.60590554 L1.41762197,45.5823774 C0.634690975,46.3653084 0,47.8970257 0,49.0049463 L0,65.9980297 C0,68.7605434 2.23630996,71.0000032 5.00197269,71.0000032 L21.9950534,71.0000032 C23.1023548,71.0000032 24.632137,70.3678662 25.417622,69.5823811 L66.3940943,28.6059067 C72.2515743,22.7484265 72.2512041,13.2512046 66.3946532,7.39465353 L63.6053468,4.60534702 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70.374497" height="70.370667" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait-Copy-4" transform="translate(-930.000000, -1232.000000)" stroke="#FFFFFF">
+            <g id="Group-7" transform="translate(930.000000, 1232.000000)">
+                <use id="Path-25" mask="url(#mask-2)" stroke-width="10" xlink:href="#path-1"></use>
+                <path d="M15.5,68.5 L65.5,68.5" id="Line" stroke-width="5" stroke-linecap="round"></path>
+                <path d="M20.5,50.5 L49.5,21.5" id="Line" stroke-width="5" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
