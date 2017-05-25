@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+	<meta charset="utf-8">
+	<title>注册 | EXP-Weibo</title>
+	<style type="text/css">
+		body{
+			margin:0;
+			background: #f8f8f8;
+		}
+		#logo{
+			width: 70px;
+			height: 70px;
+			margin:60px auto 0 auto;
+			background-image: url(logo.png);
+			background-color: #fff;
+			background-repeat: no-repeat;
+			background-size: 70px 70px;
+			background-position: center;
+			border: rgba(0, 0, 0, 0.1) solid 1px;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17)
+		}
+		form{
+			margin:27px auto 20px auto;
+		}
+		#box{
+			border-top: #d7d7d7 solid 1px;
+			border-bottom: #d7d7d7 solid 1px;
+			background-color: #fff;
+			height: 163px;
+			overflow: hidden;
+		}
+		input{
+			color: #aaa;
+			outline: 0;
+			font-size: 15px;
+			height: 40px;
+			width: 266px;
+			padding: 0;
+			float: left;
+			border: 0px solid #000;
+		}
+		input::-webkit-input-placeholder 
+		{
+			color: #a9a9a9;
+		}
+		.inputbox{
+			margin: 0 16px;
+			height: 40px;
+			border-bottom: #d7d7d7 solid 1px;
+		}
+		.icon{
+			height: 24px;
+			width: 20px;
+			display: inline-block;
+			margin:8px 27px 8px 0px;
+			float: left;
+			background-image: url(iconset/sign.svg);
+			background-size: 80px 24px;
+			background-repeat: no-repeat;
+			opacity: 0.3;
+		}
+		#nicknameicon{
+			background-position: 0px 0px;
+		}
+		#passwordicon{
+			background-position: -20px 0px;
+		}
+		#emailicon{
+			background-position: -40px 0px;
+		}
+		#repeaticon{
+			background-position: -60px 0px;
+		}
+
+		#submit{
+			display: block;
+			margin: 20px auto 14px auto;
+			padding: 0;
+			width: 326px;
+			height: 43px;
+			border-radius: 3px;
+			font-size: 17px;
+			background-color: #008afe;
+			border: 1px solid #007cff;
+			color: #fff;
+			outline: 0;
+			cursor: pointer;
+		}
+		#submit:active{
+			background-color: #007cff;
+		}
+		#message{
+			margin-bottom: 8px;
+			text-align: center;
+			color: #e24123;
+			font-weight: bold;
+			font-size: 14px;
+			display: none;
+		}
+		#protocol{
+			display: block;
+			width: 128px;
+			text-align: center;
+			font-size: 13px;
+			text-decoration: underline;
+			color: #969696;
+			margin: 0 auto;
+		}
+		#tab{
+			display: block;
+			width: 150px;
+			height: 32px;
+			line-height: 32px;
+			margin: auto; 
+			color: #437bb1;
+			font-size: 14px;
+			text-align: center;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+		#tab:active{
+			background-color: #eee;
+		}
+		#submit,#tab{
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+	</style>
+
+</head>
+<body>
+<div id="logo"></div>
+<form>
+	<div id="message"></div>
+	<div id="box">	
+		<div class="inputbox">
+			<div class="icon" id="emailicon"></div>
+			<input id="email" type="text" name="user" autocomplete="off" placeholder="常用邮箱 / Email">
+		</div>
+
+		<div class="inputbox">
+			<div class="icon" id="nicknameicon"></div>
+			<input id="nickname" type="text" name="nickname" autocomplete="off" placeholder="昵称 / Nickname">
+		</div>
+
+		<div class="inputbox">
+			<div class="icon" id="passwordicon"></div>
+			<input id="passwd" type="password" name="passwd" autocomplete="off" placeholder="密码 / Password">
+		</div>
+
+		<div class="inputbox">
+			<div class="icon" id="repeaticon"></div>
+			<input id="repeatpasswd" type="password" name="repeatpasswd" autocomplete="off" placeholder="重复密码 / Confirm">
+		</div>
+	</div>
+	<button id="submit" type="button" onclick="register()">同意协议并注册</button>
+	<a id="protocol" href='http://weibo.cn/dpool/ttt/h5/regagreement.php?from=h5&wm=3349&lang=zh_CN&siminfo='">实验版微博使用协议</a>
+</form>
+<div id="tab" onclick="window.location.href='login.html'">已有账号？前去登录</div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+<script type="text/javascript">
+
+function register(){	
+	var email=$("#email").val();
+	var nickname=$("#nickname").val();
+	var password=$("#passwd").val();
+	var repeatpassword=$("#repeatpasswd").val();
+	var re =new RegExp("^[\\d|a-z|_]+?@[\\d|a-z|_]+?\\.[\\d|a-z|_|.]+?$","g");
+
+	if(email.length==0)
+	{
+		showmessage("请输入注册邮箱")
+		return
+	}
+	if(nickname.length==0)
+	{
+		showmessage("请输入昵称")
+		return
+	}
+	else if(password.length==0)
+	{
+		showmessage("请输入密码")
+		return
+	}
+	else if(repeatpassword.length==0)
+	{
+		showmessage("请重复密码")
+		return
+	}
+	else if(re.test(email)==false)
+	{
+		showmessage("请输入正确格式的邮箱地址")
+		return
+	}
+	else if(password!=repeatpassword)
+	{
+		showmessage("两次输入的密码不一致")
+		return
+	}
+
+
+	var postData = {};
+	postData["email"] = email;
+	postData["password"] = password;
+	postData["nickname"] = nickname;
+
+	$.ajax({
+		url:"/signup",
+		type:"post",
+		data: postData, 
+		async: true,
+
+		success:function(data){	
+			// console.log(data);
+			window.location.href="login.html"
+		},
+		error:function(e){
+			// console.log(e);
+			if(e.statusText=="email address already registered"){
+				showmessage("此邮箱已存在")
+			}
+			if(e.statusText=="nickname has been used"){
+				showmessage("此昵称已被使用")
+			}
+
+		}
+
+	});
+}
+
+function showmessage(message)
+{
+	$("#message").text(message);
+	$("#message").fadeIn(200);
+	clearTimeout();
+	setTimeout(function() {
+    	$("#message").fadeOut(500);;
+	}, 2000);
+};
+
+</script>
+</html>
+
+
+
+

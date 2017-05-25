@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+	<meta charset="utf-8">
+	<title>登录 | EXP-Weibo</title>
+	<style type="text/css">
+		body{
+			margin:0;
+			background: #f8f8f8;
+		}
+		#logo{
+			width: 70px;
+			height: 70px;
+			margin:80px auto 0 auto;
+			background-image: url(logo.png);
+			background-color: #fff;
+			background-repeat: no-repeat;
+			background-size: 70px 70px;
+			background-position: center;
+			border: rgba(0, 0, 0, 0.1) solid 1px;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17)
+		}
+		form{
+			margin:27px auto 20px auto;
+		}
+		#box{
+			border-top: #d7d7d7 solid 1px;
+			border-bottom: #d7d7d7 solid 1px;
+			background-color: #fff;
+			height: 81px;
+			overflow: hidden;
+		}
+		input{
+			color: #aaa;
+			outline: 0;
+			font-size: 15px;
+			height: 40px;
+			width: 266px;
+			padding: 0;
+			float: left;
+			border: 0px solid #000;
+		}
+		input::-webkit-input-placeholder 
+		{
+			color: #a9a9a9;
+		}
+		.inputbox{
+			margin: 0 16px;
+			height: 40px;
+			border-bottom: #d7d7d7 solid 1px;
+		}
+		.icon{
+			height: 24px;
+			width: 20px;
+			display: inline-block;
+			margin:8px 27px 8px 0px;
+			float: left;
+			background-image: url(iconset/sign.svg);
+			background-size: 80px 24px;
+			background-repeat: no-repeat;
+			opacity: 0.3;
+		}
+		#usericon{
+			background-position: 0px 0px;
+		}
+		#passwordicon{
+			background-position: -20px 0px;
+		}
+
+		#submit{
+			display: block;
+			margin: 20px auto 15px auto;
+			padding: 0;
+			width: 326px;
+			height: 43px;
+			border-radius: 3px;
+			font-size: 17px;
+			background-color: #008afe;
+			border: 1px solid #007cff;
+			color: #fff;
+			outline: 0;
+			cursor: pointer;
+		}
+		#submit:active{
+			background-color: #007cff;
+		}
+		#message{
+			margin-bottom: 8px;
+			text-align: center;
+			color: #e24123;
+			font-weight: bold;
+			font-size: 14px;
+			display: none;
+		}
+		#tab{
+			display: block;
+			width: 150px;
+			height: 32px;
+			line-height: 32px;
+			margin: auto; 
+			color: #437bb1;
+			font-size: 14px;
+			text-align: center;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+		#tab:active{
+			background-color: #eee;
+		}
+		#submit,#tab{
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+	</style>
+
+</head>
+<body>
+<div id="logo"></div>
+<form>
+	<div id="message"></div>
+	<div id="box">	
+		<div class="inputbox">
+			<div class="icon" id="usericon"></div>
+			<input id="user" type="text" name="user" autocomplete="off" placeholder="邮箱 / Email">
+		</div>
+		
+		<div class="inputbox">
+			<div class="icon" id="passwordicon"></div>
+			<input id="password" type="password" name="password" autocomplete="off" placeholder="密码 / Password">
+		</div>
+	</div>
+	<button id="submit" type="button" onclick="login()">登录</button>
+</form>
+<div id="tab" onclick="window.location.href='register.html'">没有账号？立即注册</div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+<script type="text/javascript">
+
+function login(){	
+	var email=$("#user").val();
+	var password=$("#password").val();
+	var re =new RegExp("^[\\d|a-z|_]+?@[\\d|a-z|_]+?\\.[\\d|a-z|_|.]+?$","g");
+
+	if(email.length==0)
+	{
+		showmessage("请输入注册邮箱")
+		return
+	}
+	else if(password.length==0)
+	{
+		showmessage("请输入密码")
+		return
+	}
+	else if(re.test(email)==false)
+	{
+		showmessage("请输入正确格式的邮箱地址")
+		return
+	}
+
+	var postData = {};
+	postData["email"] = email;
+	postData["password"] = password;
+
+	$.ajax({
+		url:"/signin",
+		type:"post",
+		data: postData, 
+		async: true,
+
+		success:function(data){	
+			console.log(data);
+			window.location.href="/"
+		},
+		error:function(e){
+			// console.log(e);
+			if(e.statusText=="login failed"){
+				showmessage("用户名或密码不正确")
+			}
+			// else if(e.statusText=="no that user"){
+			// 	showmessage("该用户不存在")
+			// }
+			else if(e.statusText=="not verfiy yet"){
+				showmessage("账号未激活")
+			}
+		}
+
+	});
+}
+
+
+function showmessage(message)
+{
+	$("#message").text(message);
+	$("#message").fadeIn(200);
+	clearTimeout();
+	setTimeout(function() {
+    	$("#message").fadeOut(500);;
+	}, 2000);
+};
+
+</script>
+</html>
+
+
+
+
